@@ -1,0 +1,54 @@
+[
+  {
+    "productName": "Gaming Laptop",
+    "productId": "1",
+    "productPrice": "1799",
+    "productDes": "High-performance gaming laptop.\n\nSpecs:\n- Intel i9 processor\n- 32GB RAM\n- 1TB SSD\n- RTX 3080 GPU\n- 17.3\" 144Hz display\n\nWarranty: 2 years international warranty",
+    "productRating": 4.9,
+    "productDisCount": "20%",
+    "productHave": true,
+    "productBrand": "TechPro",
+    "productImage": "https://images.unsplash.com/photo-1603302576837-37561b2e2302",
+    "productCategory": "Electronics",
+    "productNote": "Free gaming accessories"
+  },
+  {
+    "productName": "Smart Washing Machine",
+    "productId": "2",
+    "productPrice": "899",
+    "productDes": "Front load smart washing machine.\n\nFeatures:\n- 9kg capacity\n- WiFi enabled\n- Multiple wash programs\n- Energy efficient\n- Steam wash\n\nWarranty: 3 years comprehensive",
+    "productRating": 4.7,
+    "productDisCount": "15%",
+    "productHave": true,
+    "productBrand": "Hometech",
+    "productImage": "https://www.gizmochina.com/wp-content/uploads/2024/05/Mijia-Essence-Wash-10kg-Smart-Washing-Machine.png",
+    "productCategory": "Household",
+    "productNote": "Free installation"
+  },
+  {
+    "productName": "Study Desk",
+    "productId": "3",
+    "productPrice": "299",
+    "productDes": "Modern study desk with storage.\n\nFeatures:\n- Built-in drawers\n- Cable management\n- Ergonomic design\n- Easy assembly\n\nMaterial & Care\nMaterial: Engineered wood\nCare: Wipe clean with damp cloth",
+    "productRating": 4.5,
+    "productDisCount": "",
+    "productHave": true,
+    "productBrand": "FurniCraft",
+    "productImage": "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd",
+    "productCategory": "Furniture",
+    "productNote": "Assembly available"
+  },
+  {
+    "productName": "Air Purifier",
+    "productId": "4",
+    "productPrice": "299",
+    "productDes": "Smart air purifier with HEPA filter.\n\nFeatures:\n- HEPA filtration\n- Air quality sensor\n- Auto mode\n- Silent operation\n- App control\n\nWarranty: 1 year manufacturer warranty",
+    "productRating": 4.6,
+    "productDisCount": "10%",
+    "productHave": true,
+    "productBrand": "AirCare",
+    "productImage": "https://renpho.au/cdn/shop/collections/herobanner-air-purifier.webp?v=1716370087",
+    "productCategory": "Household",
+    "productNote": "Free filter replacement"
+  }
+]

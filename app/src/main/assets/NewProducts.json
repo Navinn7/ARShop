@@ -1,0 +1,67 @@
+[
+  {
+    "productName": "Modern L-Shaped Sofa",
+    "productId": "1",
+    "productPrice": "899",
+    "productDes": "Elegant L-shaped sofa with premium fabric upholstery.\n\nDimensions: L250 x W180 x H85 cm\n\nFeatures:\n- Premium fabric\n- High-density foam\n- Solid wood frame\n- 5 year warranty\n\nMaterial & Care\nMaterial: Premium Fabric\nCare: Vacuum regularly, spot clean with mild detergent",
+    "productRating": 4.5,
+    "productDisCount": "15%",
+    "productHave": true,
+    "productBrand": "FurniCraft",
+    "productImage": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc",
+    "productCategory": "Furniture",
+    "productNote": "Free assembly included"
+  },
+  {
+    "productName": "Smart 4K LED TV 65-inch",
+    "productId": "2",
+    "productPrice": "1299",
+    "productDes": "65-inch 4K Ultra HD Smart LED TV with HDR.\n\nFeatures:\n- 4K Resolution (3840 x 2160)\n- HDR10+\n- Built-in WiFi\n- Voice control\n- 4 HDMI ports\n\nWarranty: 2 years manufacturer warranty",
+    "productRating": 4.8,
+    "productDisCount": "10%",
+    "productHave": true,
+    "productBrand": "TechVision",
+    "productImage": "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1",
+    "productCategory": "Electronics",
+    "productNote": "Free wall mounting"
+  },
+  {
+    "productName": "Smart Refrigerator",
+    "productId": "3",
+    "productPrice": "1499",
+    "productDes": "Double-door smart refrigerator with WiFi connectivity.\n\nFeatures:\n- 500L capacity\n- Smart temperature control\n- Ice maker\n- Energy efficient\n- Digital display\n\nWarranty: 5 years on compressor",
+    "productRating": 4.6,
+    "productDisCount": "12%",
+    "productHave": true,
+    "productBrand": "Hometech",
+    "productImage": "https://images.unsplash.com/photo-1571175443880-49e1d25b2bc5",
+    "productCategory": "Household",
+    "productNote": "Free delivery and installation"
+  },
+  {
+    "productName": "Queen Size Bed Frame",
+    "productId": "4",
+    "productPrice": "599",
+    "productDes": "Modern queen size bed frame with storage.\n\nDimensions: L210 x W150 x H100 cm\n\nFeatures:\n- Built-in storage\n- Solid wood construction\n- Premium finish\n- Easy assembly\n\nMaterial & Care\nMaterial: Engineered wood\nCare: Wipe with dry cloth",
+    "productRating": 4.3,
+    "productDisCount": "",
+    "productHave": true,
+    "productBrand": "FurniCraft",
+    "productImage": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85",
+    "productCategory": "Furniture",
+    "productNote": "Assembly required"
+  },
+  {
+    "productName": "Robot Vacuum Cleaner",
+    "productId": "5",
+    "productPrice": "399",
+    "productDes": "Smart robot vacuum with mapping technology.\n\nFeatures:\n- Smart mapping\n- WiFi connectivity\n- App control\n- Auto-charging\n- HEPA filter\n\nWarranty: 1 year manufacturer warranty",
+    "productRating": 4.4,
+    "productDisCount": "8%",
+    "productHave": true,
+    "productBrand": "CleanTech",
+    "productImage": "https://img.freepik.com/free-photo/close-upon-robot-vacuum-cleaner-indoors_23-2150830009.jpg?t=st=1737922535~exp=1737926135~hmac=460ad396715e3b8173b3a74d6f0ee8a3a461a5e32d28439a64095c80d48fda00&w=996",
+    "productCategory": "Household",
+    "productNote": "Free app included"
+  }
+]
