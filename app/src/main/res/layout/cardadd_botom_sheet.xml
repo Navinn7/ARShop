@@ -80,7 +80,7 @@
                 android:background="@drawable/edit_text_bg"
                 android:fontFamily="@font/metropolis_regular"
                 android:hint="Expiry Date"
-                android:inputType="text"
+                android:inputType="date"
                 android:maxLines="1" />
 
             <EditText

@@ -11,7 +11,6 @@ data class ProductEntity (
     @ColumnInfo(name = "Product_Price") var price: Int,
     @ColumnInfo(name = "Product_ID") var pId: String,
     @ColumnInfo(name = "Product_Image") var Image: String,
-
         ){
     @PrimaryKey(autoGenerate = true)
     var id: Int = 0

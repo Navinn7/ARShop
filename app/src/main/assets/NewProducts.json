@@ -10,7 +10,8 @@
     "productBrand": "FurniCraft",
     "productImage": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc",
     "productCategory": "Furniture",
-    "productNote": "Free assembly included"
+    "productNote": "Free assembly included",
+    "modelURL": "https://drive.google.com/uc?export=download&id=1PDH6vKxbzGvUcpn3fT7r9YKmq3vLV5Xw"
   },
   {
     "productName": "Smart 4K LED TV 65-inch",
@@ -23,7 +24,8 @@
     "productBrand": "TechVision",
     "productImage": "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1",
     "productCategory": "Electronics",
-    "productNote": "Free wall mounting"
+    "productNote": "Free wall mounting",
+    "modelURL": "https://drive.google.com/uc?export=download&id=1NSw7fXQtjII42Mf09rm28J6plo5WHIkI"
   },
   {
     "productName": "Smart Refrigerator",
@@ -36,7 +38,8 @@
     "productBrand": "Hometech",
     "productImage": "https://images.unsplash.com/photo-1571175443880-49e1d25b2bc5",
     "productCategory": "Household",
-    "productNote": "Free delivery and installation"
+    "productNote": "Free delivery and installation",
+    "modelURL": "https://drive.google.com/uc?export=download&id=1EGXiMl0EB69rgDxQcnrT5hT3QfNdV3Uw"
   },
   {
     "productName": "Queen Size Bed Frame",
@@ -49,7 +52,8 @@
     "productBrand": "FurniCraft",
     "productImage": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85",
     "productCategory": "Furniture",
-    "productNote": "Assembly required"
+    "productNote": "Assembly required",
+    "modelURL": "https://drive.google.com/uc?export=download&id=13BrpF5dOVrwndV7U-gzuNuwq-B2yu-z8"
   },
   {
     "productName": "Robot Vacuum Cleaner",
@@ -62,6 +66,7 @@
     "productBrand": "CleanTech",
     "productImage": "https://img.freepik.com/free-photo/close-upon-robot-vacuum-cleaner-indoors_23-2150830009.jpg?t=st=1737922535~exp=1737926135~hmac=460ad396715e3b8173b3a74d6f0ee8a3a461a5e32d28439a64095c80d48fda00&w=996",
     "productCategory": "Household",
-    "productNote": "Free app included"
+    "productNote": "Free app included",
+    "modelURL": "https://drive.google.com/uc?export=download&id=1fEx0-Aq77NH8SW-DvHUx2256Fmx9yda6"
   }
 ]

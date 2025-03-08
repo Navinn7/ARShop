@@ -2,6 +2,7 @@ package com.example.buynow.presentation.activity
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -22,6 +23,7 @@ import com.example.buynow.utils.Extensions.toast
 import com.example.buynow.data.local.room.CartViewModel
 import com.example.buynow.data.local.room.ProductEntity
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.android.material.button.MaterialButton
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.io.IOException
@@ -42,7 +44,6 @@ class ProductDetailsActivity : AppCompatActivity() {
     lateinit var productRating_singleProduct: RatingBar
 
 
-
     lateinit var RecomRecView_ProductDetailsPage: RecyclerView
     lateinit var newProductAdapter: ProductAdapter
     lateinit var newProduct: ArrayList<Product>
@@ -52,8 +53,9 @@ class ProductDetailsActivity : AppCompatActivity() {
     var pPrice: Int = 0
     lateinit var pPid: String
     lateinit var pImage: String
-
+    private lateinit var modelURL: String
     lateinit var cardNumber: String
+    private lateinit var tryAtHomeButton: MaterialButton
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -76,15 +78,18 @@ class ProductDetailsActivity : AppCompatActivity() {
         RecomRecView_ProductDetailsPage = findViewById(R.id.RecomRecView_ProductDetailsPage)
         backIv_ProfileFrag = findViewById(R.id.backIv_ProfileFrag)
         val addToCart_ProductDetailsPage: Button = findViewById(R.id.addToCart_ProductDetailsPage)
-        val shippingAddress_productDetailsPage:LinearLayout = findViewById(R.id.shippingAddress_productDetailsPage)
-        val cardNumberProduct_Details:TextView = findViewById(R.id.cardNumberProduct_Details)
+        val shippingAddress_productDetailsPage: LinearLayout =
+            findViewById(R.id.shippingAddress_productDetailsPage)
+        val cardNumberProduct_Details: TextView = findViewById(R.id.cardNumberProduct_Details)
 
+        tryAtHomeButton = findViewById(R.id.try_at_home_button)
+        setupARViewing()
         cardNumber = GetDefCard()
 
-        if(cardNumber == "" || cardNumber == null){
+
+        if (cardNumber == "" || cardNumber == null) {
             cardNumberProduct_Details.text = "You Have No Cards"
-        }
-        else{
+        } else {
             cardNumberProduct_Details.text = cardXXGen(cardNumber)
         }
 
@@ -130,18 +135,22 @@ class ProductDetailsActivity : AppCompatActivity() {
             }
 
             bottomSheetView.findViewById<LinearLayout>(R.id.minusLayout).setOnClickListener {
-                if(bottomSheetView.findViewById<EditText>(R.id.quantityEtBottom).text.toString()
-                        .toInt() > 1){
+                if (bottomSheetView.findViewById<EditText>(R.id.quantityEtBottom).text.toString()
+                        .toInt() > 1
+                ) {
                     qua--
-                    bottomSheetView.findViewById<EditText>(R.id.quantityEtBottom).setText(qua.toString())
+                    bottomSheetView.findViewById<EditText>(R.id.quantityEtBottom)
+                        .setText(qua.toString())
                 }
             }
 
             bottomSheetView.findViewById<LinearLayout>(R.id.plusLayout).setOnClickListener {
-                if(bottomSheetView.findViewById<EditText>(R.id.quantityEtBottom).text.toString()
-                        .toInt() < 10){
+                if (bottomSheetView.findViewById<EditText>(R.id.quantityEtBottom).text.toString()
+                        .toInt() < 10
+                ) {
                     qua++
-                    bottomSheetView.findViewById<EditText>(R.id.quantityEtBottom).setText(qua.toString())
+                    bottomSheetView.findViewById<EditText>(R.id.quantityEtBottom)
+                        .setText(qua.toString())
                 }
             }
 
@@ -150,6 +159,7 @@ class ProductDetailsActivity : AppCompatActivity() {
         }
 
     }
+
 
     private fun addProductToBag() {
 
@@ -206,12 +216,14 @@ class ProductDetailsActivity : AppCompatActivity() {
         productBrand_ProductDetailsPage.text = coverD[productIndex].productBrand
         productDes_ProductDetailsPage.text = coverD[productIndex].productDes
         productRating_singleProduct.rating = coverD[productIndex].productRating
-        RatingProductDetails.text = coverD[productIndex].productRating.toString() + " Rating on this Product."
+        RatingProductDetails.text =
+            coverD[productIndex].productRating.toString() + " Rating on this Product."
 
         pName = coverD[productIndex].productName
         pPrice = coverD[productIndex].productPrice.toInt()
         pPid = coverD[productIndex].productId
         pImage = coverD[productIndex].productImage
+        modelURL = coverD[productIndex].modelURL
 
     }
 
@@ -250,6 +262,36 @@ class ProductDetailsActivity : AppCompatActivity() {
 
     }
 
+    private fun setupARViewing() {
+        tryAtHomeButton.setOnClickListener {
+            launchARViewer()
+        }
+    }
+
+    private fun launchARViewer() {
+        try {
+            val sceneViewerIntent = Intent(Intent.ACTION_VIEW)
+            val intentUri = Uri.parse("https://arvr.google.com/scene-viewer/1.0").buildUpon()
+                .appendQueryParameter("file", modelURL) // Using product image URL as model URL for demo
+                .appendQueryParameter("mode", "ar_preferred")
+                .appendQueryParameter("title", pName)
+                .appendQueryParameter("resizable", "false")
+                .build()
+
+            sceneViewerIntent.data = intentUri
+            sceneViewerIntent.setPackage("com.google.ar.core")
+
+            startActivity(sceneViewerIntent)
+        } catch (e: Exception) {
+            Toast.makeText(
+                this,
+                "AR Viewer not available on this device",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+
+
+    }
 }
 
 

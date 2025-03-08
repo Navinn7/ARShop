@@ -8,6 +8,7 @@
     <uses-permission android:name="android.permission.CAMERA" />
 
     <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-feature android:name="android.hardware.camera.ar" android:required="false"/>
 
     <application
         android:allowBackup="true"
@@ -18,6 +19,9 @@
         android:largeHeap="true"
         android:hardwareAccelerated="false"
         android:theme="@style/Theme.BuyNow">
+        <meta-data
+            android:name="com.google.ar.core"
+            android:value="optional" />
         <activity android:name=".presentation.activity.PaymentMethodActivity" />
         <activity android:name=".presentation.activity.AddAddressActivity" />
         <activity android:name=".presentation.activity.ShipingAddressActivity" />
