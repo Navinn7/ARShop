@@ -10,6 +10,8 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
+import android.content.Intent
+import android.widget.Button
 
 import androidx.lifecycle.Observer
 
@@ -26,6 +28,7 @@ import com.example.buynow.R
 
 import com.example.buynow.data.local.room.CartViewModel
 import com.example.buynow.data.local.room.ProductEntity
+import com.example.buynow.presentation.activity.OrderSuccessActivity
 
 class BagFragment : Fragment(), CartItemClickAdapter {
 
@@ -67,6 +70,17 @@ class BagFragment : Fragment(), CartItemClickAdapter {
 
 
         cartViewModel = ViewModelProviders.of(this).get(CartViewModel::class.java)
+
+        view.findViewById<Button>(R.id.checkOut_BagPage).setOnClickListener {
+            // Clear all items from cart
+            Item.forEach { product ->
+                cartViewModel.deleteCart(product)
+            }
+
+            // Navigate to order success activity
+            val intent = Intent(activity, OrderSuccessActivity::class.java)
+            startActivity(intent)
+        }
 
         cartViewModel.allproducts.observe(viewLifecycleOwner, Observer {List ->
             List?.let {
