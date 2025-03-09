@@ -4,8 +4,11 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.buynow.R
 import com.example.buynow.data.model.ShippingAddress
+import com.example.buynow.presentation.adapter.AddressAdapter
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -16,6 +19,8 @@ class ShipingAddressActivity : AppCompatActivity() {
 
     private lateinit var db: FirebaseFirestore
     private lateinit var auth: FirebaseAuth
+    private lateinit var addressAdapter: AddressAdapter
+    private lateinit var recyclerView: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,10 +30,45 @@ class ShipingAddressActivity : AppCompatActivity() {
         db = FirebaseFirestore.getInstance()
         auth = FirebaseAuth.getInstance()
 
+        // Initialize RecyclerView and Adapter
+        setupRecyclerView()
+
         // Initialize FAB and set click listener
         val addAddressButton = findViewById<FloatingActionButton>(R.id.addAddress_ShippingPage)
         addAddressButton.setOnClickListener {
             showAddAddressDialog()
+        }
+
+        // Load addresses
+        loadAddresses()
+    }
+
+    private fun setupRecyclerView() {
+        recyclerView = findViewById(R.id.addressesRecyclerView)
+        addressAdapter = AddressAdapter()
+        recyclerView.apply {
+            layoutManager = LinearLayoutManager(this@ShipingAddressActivity)
+            adapter = addressAdapter
+        }
+    }
+
+    private fun loadAddresses() {
+        val userId = auth.currentUser?.uid
+        if (userId != null) {
+            db.collection("shipping_addresses")
+                .whereEqualTo("userId", userId)
+                .addSnapshotListener { snapshot, error ->
+                    if (error != null) {
+                        showToast("Error loading addresses: ${error.message}")
+                        return@addSnapshotListener
+                    }
+
+                    val addressList = snapshot?.documents?.mapNotNull { doc ->
+                        doc.toObject(ShippingAddress::class.java)
+                    } ?: listOf()
+
+                    addressAdapter.updateAddresses(addressList)
+                }
         }
     }
 
