@@ -49,16 +49,16 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/cardRecView_paymentMethodPage"
-        android:layout_marginTop="30dp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        tools:listitem="@layout/single_card"
+        android:layout_marginTop="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout9" />
-
-
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout9"
+        app:layout_constraintVertical_bias="1.0"
+        tools:listitem="@layout/single_card" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/addCard_PaymentMethodPage"

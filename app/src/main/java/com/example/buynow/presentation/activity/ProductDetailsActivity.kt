@@ -228,21 +228,9 @@ class ProductDetailsActivity : AppCompatActivity() {
     }
 
     private fun setRecData() {
-
-
-        var fileJson: String = ""
-
-        if (ProductFrom.equals("Cover")) {
-            fileJson = "NewProducts.json"
-        }
-        if (ProductFrom.equals("New")) {
-            fileJson = "CoverProducts.json"
-        }
-
-
+        // Always load recommendations from CoverProducts.json regardless of where the user came from
         val jsonFileString = this.let {
-
-            getJsonData(it, fileJson)
+            getJsonData(it, "NewProducts.json")  // Always use CoverProducts.json for recommendations
         }
         val gson = Gson()
 
@@ -251,15 +239,10 @@ class ProductDetailsActivity : AppCompatActivity() {
         var coverD: List<Product> = gson.fromJson(jsonFileString, listCoverType)
 
         coverD.forEachIndexed { idx, person ->
-
             if (idx < 9) {
                 newProduct.add(person)
             }
-
-
         }
-
-
     }
 
     private fun setupARViewing() {

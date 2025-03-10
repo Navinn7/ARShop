@@ -93,11 +93,11 @@ class ProfileFragment : Fragment() {
         })
 
         if(cards == 0){
-            cardsNumber_profileFrag.text = "You Have no Cards."
+            cardsNumber_profileFrag.text = "You have no cards."
         }
         else{
 
-        cardsNumber_profileFrag.text = "You Have "+ cards.toString() + " Cards."
+            cardsNumber_profileFrag.text = "You Have "+ cards.toString() + " cards."
         }
 
         shippingAddressCard_ProfilePage.setOnClickListener {

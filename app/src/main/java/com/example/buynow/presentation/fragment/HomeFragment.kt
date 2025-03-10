@@ -22,7 +22,6 @@ import com.example.buynow.presentation.adapter.SaleProductAdapter
 import com.example.buynow.data.model.Product
 
 import com.example.buynow.R
-import com.example.buynow.presentation.activity.VisualSearchActivity
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.io.IOException

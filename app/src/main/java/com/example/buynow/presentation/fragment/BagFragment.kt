@@ -106,7 +106,7 @@ class BagFragment : Fragment(), CartItemClickAdapter {
             }
 
             Item.forEach {
-                sum += it.price
+                sum += it.price * it.qua
             }
             totalPriceBagFrag.text = "$" + sum
         })
