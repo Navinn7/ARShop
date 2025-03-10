@@ -21,8 +21,9 @@ class CardAdapter(private val ctx: Context, val listener: CarDItemClickAdapter) 
         val cardHName: TextView = itemView.findViewById(R.id.cardHolderName_singleCard)
         val exp: TextView = itemView.findViewById(R.id.expiryDate_singleCard)
         val layD : LinearLayout = itemView.findViewById(R.id.useDefault_Layout)
-        val checkbox : CheckBox = itemView.findViewById(R.id.checkBox_SingleCard)
+        
         val cardImage:ImageView = itemView.findViewById(R.id.cardBrandImage_singleCard)
+        val deleteBtn: ImageView = itemView.findViewById(R.id.deleteCardBtn)
 
     }
 
@@ -50,7 +51,9 @@ class CardAdapter(private val ctx: Context, val listener: CarDItemClickAdapter) 
                 holder.cardImage.setImageResource(R.drawable.ic_mastercard)
             }
         }
-
+        holder.deleteBtn.setOnClickListener {
+            listener.onItemDeleteClick(cardItem)
+        }
         holder.cardHName.text = cardItem.nameCH.toString()
         holder.exp.text = cardItem.exp
         holder.cardNumber.text = cardItem.number

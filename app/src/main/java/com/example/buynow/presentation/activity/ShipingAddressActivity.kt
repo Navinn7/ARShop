@@ -39,6 +39,9 @@ class ShipingAddressActivity : AppCompatActivity() {
             showAddAddressDialog()
         }
 
+        // Setup delete functionality
+        setupDeleteFunctionality()
+
         // Load addresses
         loadAddresses()
     }
@@ -52,6 +55,33 @@ class ShipingAddressActivity : AppCompatActivity() {
         }
     }
 
+    private fun setupDeleteFunctionality() {
+        addressAdapter.setOnDeleteClickListener { address ->
+            AlertDialog.Builder(this)
+                .setTitle("Delete Address")
+                .setMessage("Are you sure you want to delete this address?")
+                .setPositiveButton("Yes") { _, _ ->
+                    deleteAddress(address)
+                }
+                .setNegativeButton("No", null)
+                .show()
+        }
+    }
+
+    private fun deleteAddress(address: ShippingAddress) {
+        val userId = auth.currentUser?.uid
+        if (userId != null) {
+            db.collection("shipping_addresses")
+                .document(address.id)
+                .delete()
+                .addOnSuccessListener {
+                    showToast("Address deleted successfully")
+                }
+                .addOnFailureListener { e ->
+                    showToast("Error deleting address: ${e.message}")
+                }
+        }
+    }
     private fun loadAddresses() {
         val userId = auth.currentUser?.uid
         if (userId != null) {

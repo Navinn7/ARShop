@@ -21,6 +21,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import androidx.lifecycle.Observer
 import android.widget.EditText
 import android.widget.Button
+import androidx.appcompat.app.AlertDialog
 import com.example.buynow.utils.CardType
 import com.example.buynow.utils.CardValidator.isValid
 import com.example.buynow.utils.Extensions.toast
@@ -29,12 +30,9 @@ class PaymentMethodActivity : AppCompatActivity(), CarDItemClickAdapter {
 
     lateinit var cardRec: RecyclerView
     lateinit var cardAdapter: CardAdapter
-
-
     lateinit var bottomSheetDialod: BottomSheetDialog
     lateinit var bottomSheetView: View
     private lateinit var cardViewModel: CardViewModel
-
     lateinit var Item: ArrayList<CardEntity>
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,8 +41,7 @@ class PaymentMethodActivity : AppCompatActivity(), CarDItemClickAdapter {
 
         cardRec = findViewById(R.id.cardRecView_paymentMethodPage)
         val backIv_PaymentMethodsPage = findViewById<ImageView>(R.id.backIv_PaymentMethodsPage)
-        val addCard_PaymentMethodPage =
-            findViewById<FloatingActionButton>(R.id.addCard_PaymentMethodPage)
+        val addCard_PaymentMethodPage = findViewById<FloatingActionButton>(R.id.addCard_PaymentMethodPage)
 
         Item = arrayListOf()
         cardViewModel = ViewModelProviders.of(this).get(CardViewModel::class.java)
@@ -54,39 +51,28 @@ class PaymentMethodActivity : AppCompatActivity(), CarDItemClickAdapter {
         cardAdapter = CardAdapter(this, this)
         cardRec.adapter = cardAdapter
 
-
-
         backIv_PaymentMethodsPage.setOnClickListener {
             onBackPressed()
         }
 
-        bottomSheetDialod = BottomSheetDialog(
-            this, R.style.BottomSheetDialogTheme
-        )
-
-        val cardAddBinding: CardAddBottomSheetBinding =
-            CardAddBottomSheetBinding.inflate(LayoutInflater.from(this))
-
+        bottomSheetDialod = BottomSheetDialog(this, R.style.BottomSheetDialogTheme)
+        val cardAddBinding: CardAddBottomSheetBinding = CardAddBottomSheetBinding.inflate(LayoutInflater.from(this))
         bottomSheetView = cardAddBinding.root
 
-      addCard_PaymentMethodPage.setOnClickListener {
+        addCard_PaymentMethodPage.setOnClickListener {
             bottomSheet()
         }
-
     }
 
-       private fun getRecData() {
-        cardViewModel.allCards.observe(this, Observer {List ->
+
+    private fun getRecData() {
+        cardViewModel.allCards.observe(this, Observer { List ->
             List?.let {
                 cardAdapter.updateList(it)
                 Item.clear()
                 Item.addAll(it)
             }
-
-
         })
-
-
     }
 
     private fun bottomSheet(){

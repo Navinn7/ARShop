@@ -198,7 +198,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/metropolis_regular"
-                        android:text="Shipping addresses"
+                        android:text="Shipping Addresses"
                         android:textColor="@color/mainText"
                         android:textSize="16sp" />
 
@@ -207,7 +207,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/metropolis_regular"
-                        android:text="No Address"
+                        android:text="Saved Shipping Addresses"
                         android:textColor="@color/textAd"
                         android:textSize="12sp" />
 
@@ -249,7 +249,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/metropolis_regular"
-                        android:text="Payment methods"
+                        android:text="Payment Methods"
                         android:textColor="@color/mainText"
                         android:textSize="16sp" />
 
@@ -260,7 +260,7 @@
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/metropolis_regular"
                         android:textColor="@color/textAd"
-                        android:text="You Have no cart"
+                        android:text="Saved Card Details"
                         android:textSize="12sp" />
 
                 </LinearLayout>
@@ -272,56 +272,6 @@
                     android:src="@drawable/ic_baseline_keyboard_arrow_right_24" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            app:cardBackgroundColor="@color/background"
-            app:cardElevation="0dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp">
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/metropolis_regular"
-                        android:text="Promo codes"
-                        android:textColor="@color/mainText"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:fontFamily="@font/metropolis_regular"
-                        android:textColor="@color/textAd"
-                        android:text="You have special promo codes"
-                        android:textSize="12sp" />
-
-                </LinearLayout>
-
-                <ImageView
-                    android:layout_width="22dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="10dp"
-                    android:src="@drawable/ic_baseline_keyboard_arrow_right_24" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
 
         <androidx.cardview.widget.CardView
             android:id="@+id/settingCd_profileFrag"
@@ -362,7 +312,7 @@
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/metropolis_regular"
                         android:textColor="@color/textAd"
-                        android:text="Notifications, password"
+                        android:text="Change Password, Logout"
                         android:textSize="12sp" />
 
                 </LinearLayout>
