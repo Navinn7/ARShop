@@ -65,10 +65,10 @@ class ShopFragment : Fragment() {
     }
 
     private fun setCategoryData() {
-        cateList.add(Category("Smartphones","https://images.unsplash.com/photo-1511707171634-5f897ff02aa9"))
-        cateList.add(Category("Laptops","https://images.unsplash.com/photo-1517336714731-489689fd1ca8"))
+        cateList.add(Category("Electronics","https://images.unsplash.com/photo-1511707171634-5f897ff02aa9"))
+        cateList.add(Category("Household","https://images.unsplash.com/photo-1517336714731-489689fd1ca8"))
         cateList.add(Category("Sofas","https://www.estre.in/cdn/shop/files/2-min_2d969ef7-e5ee-4cdd-a08a-6b0871211bab.jpg?v=1734121428"))
-        cateList.add(Category("Outdoor Furniture","https://m.media-amazon.com/images/I/91M4bSjWLBL.jpg"))
+        cateList.add(Category("Furniture","https://m.media-amazon.com/images/I/91M4bSjWLBL.jpg"))
         cateList.add(Category("Tables","https://images.unsplash.com/photo-1519710164239-da123dc03ef4"))
         cateList.add(Category("Chairs","https://images.unsplash.com/photo-1524758631624-e2822e304c36"))
         cateList.add(Category("TVs","https://www.livemint.com/lm-img/img/2024/05/02/1600x900/75_inch_smart_tv_1714649551876_1714649561405.jpg"))

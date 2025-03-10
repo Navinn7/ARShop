@@ -25,8 +25,6 @@
         <activity android:name=".presentation.activity.PaymentMethodActivity" />
         <activity android:name=".presentation.activity.AddAddressActivity" />
         <activity android:name=".presentation.activity.ShipingAddressActivity" />
-        <activity android:name=".presentation.activity.VisualResultActivity" />
-        <activity android:name=".presentation.activity.VisualSearchActivity" />
         <activity android:name=".presentation.activity.ProductDetailsActivity" />
         <activity android:name=".presentation.activity.SettingsActivity" />
         <activity android:name=".presentation.activity.SplashScreenActivity"
@@ -43,6 +41,9 @@
         <activity android:name=".presentation.activity.LoginActivity" />
         <activity
             android:name=".presentation.activity.OrderSuccessActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.activity.ProductListActivity"
             android:exported="false" />
     </application>
 

@@ -212,7 +212,7 @@ class ProductDetailsActivity : AppCompatActivity() {
             .into(productImage_ProductDetailsPage)
 
         productName_ProductDetailsPage.text = coverD[productIndex].productName
-        productPrice_ProductDetailsPage.text = "$" + coverD[productIndex].productPrice
+        productPrice_ProductDetailsPage.text = "₹" + coverD[productIndex].productPrice
         productBrand_ProductDetailsPage.text = coverD[productIndex].productBrand
         productDes_ProductDetailsPage.text = coverD[productIndex].productDes
         productRating_singleProduct.rating = coverD[productIndex].productRating
