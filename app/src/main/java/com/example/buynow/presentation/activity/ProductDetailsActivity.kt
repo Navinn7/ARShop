@@ -42,7 +42,7 @@ class ProductDetailsActivity : AppCompatActivity() {
     lateinit var productDes_ProductDetailsPage: TextView
     lateinit var RatingProductDetails: TextView
     lateinit var productRating_singleProduct: RatingBar
-
+    private lateinit var product: Product
 
     lateinit var RecomRecView_ProductDetailsPage: RecyclerView
     lateinit var newProductAdapter: ProductAdapter
@@ -64,7 +64,7 @@ class ProductDetailsActivity : AppCompatActivity() {
 
         window?.addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
 
-
+        product = intent.getParcelableExtra("product")!!
         productIndex = intent.getIntExtra("ProductIndex", -1)
         ProductFrom = intent.getStringExtra("ProductFrom").toString()
 
@@ -160,6 +160,38 @@ class ProductDetailsActivity : AppCompatActivity() {
 
     }
 
+    private fun initializeViews() {
+        productImage_ProductDetailsPage = findViewById(R.id.productImage_ProductDetailsPage)
+        productName_ProductDetailsPage = findViewById(R.id.productName_ProductDetailsPage)
+        productPrice_ProductDetailsPage = findViewById(R.id.productPrice_ProductDetailsPage)
+        productBrand_ProductDetailsPage = findViewById(R.id.productBrand_ProductDetailsPage)
+        productDes_ProductDetailsPage = findViewById(R.id.productDes_ProductDetailsPage)
+        productRating_singleProduct = findViewById(R.id.productRating_singleProduct)
+        RatingProductDetails = findViewById(R.id.RatingProductDetails)
+        RecomRecView_ProductDetailsPage = findViewById(R.id.RecomRecView_ProductDetailsPage)
+        backIv_ProfileFrag = findViewById(R.id.backIv_ProfileFrag)
+        tryAtHomeButton = findViewById(R.id.try_at_home_button)
+    }
+
+    private fun setProductData() {
+        Glide.with(applicationContext)
+            .load(product.productImage)
+            .into(productImage_ProductDetailsPage)
+
+        productName_ProductDetailsPage.text = product.productName
+        productPrice_ProductDetailsPage.text = "₹${product.productPrice}"
+        productBrand_ProductDetailsPage.text = product.productBrand
+        productDes_ProductDetailsPage.text = product.productDes
+        productRating_singleProduct.rating = product.productRating
+        RatingProductDetails.text = "${product.productRating} Rating on this Product."
+
+        // Store values for cart
+        pName = product.productName
+        pPrice = product.productPrice.toInt()
+        pPid = product.productId
+        pImage = product.productImage
+        modelURL = product.modelURL
+    }
 
     private fun addProductToBag() {
 
@@ -183,49 +215,7 @@ class ProductDetailsActivity : AppCompatActivity() {
         return jsonString
     }
 
-    private fun setProductData() {
 
-        var fileJson: String = ""
-
-        if (ProductFrom.equals("Cover")) {
-            fileJson = "CoverProducts.json"
-        }
-        if (ProductFrom.equals("New")) {
-            fileJson = "NewProducts.json"
-        }
-
-
-        val jsonFileString = this.let {
-
-            getJsonData(it, fileJson)
-        }
-
-        val gson = Gson()
-
-
-        val listCoverType = object : TypeToken<List<Product>>() {}.type
-
-        var coverD: List<Product> = gson.fromJson(jsonFileString, listCoverType)
-
-        Glide.with(applicationContext)
-            .load(coverD[productIndex].productImage)
-            .into(productImage_ProductDetailsPage)
-
-        productName_ProductDetailsPage.text = coverD[productIndex].productName
-        productPrice_ProductDetailsPage.text = "₹" + coverD[productIndex].productPrice
-        productBrand_ProductDetailsPage.text = coverD[productIndex].productBrand
-        productDes_ProductDetailsPage.text = coverD[productIndex].productDes
-        productRating_singleProduct.rating = coverD[productIndex].productRating
-        RatingProductDetails.text =
-            coverD[productIndex].productRating.toString() + " Rating on this Product."
-
-        pName = coverD[productIndex].productName
-        pPrice = coverD[productIndex].productPrice.toInt()
-        pPid = coverD[productIndex].productId
-        pImage = coverD[productIndex].productImage
-        modelURL = coverD[productIndex].modelURL
-
-    }
 
     private fun setRecData() {
         // Always load recommendations from CoverProducts.json regardless of where the user came from
