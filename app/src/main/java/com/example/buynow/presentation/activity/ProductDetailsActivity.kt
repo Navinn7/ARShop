@@ -78,25 +78,13 @@ class ProductDetailsActivity : AppCompatActivity() {
         RecomRecView_ProductDetailsPage = findViewById(R.id.RecomRecView_ProductDetailsPage)
         backIv_ProfileFrag = findViewById(R.id.backIv_ProfileFrag)
         val addToCart_ProductDetailsPage: Button = findViewById(R.id.addToCart_ProductDetailsPage)
-        val shippingAddress_productDetailsPage: LinearLayout =
-            findViewById(R.id.shippingAddress_productDetailsPage)
-        val cardNumberProduct_Details: TextView = findViewById(R.id.cardNumberProduct_Details)
 
         tryAtHomeButton = findViewById(R.id.try_at_home_button)
         setupARViewing()
         cardNumber = GetDefCard()
 
 
-        if (cardNumber == "" || cardNumber == null) {
-            cardNumberProduct_Details.text = "You Have No Cards"
-        } else {
-            cardNumberProduct_Details.text = cardXXGen(cardNumber)
-        }
 
-
-        shippingAddress_productDetailsPage.setOnClickListener {
-            startActivity(Intent(this, PaymentMethodActivity::class.java))
-        }
 
 
         newProduct = arrayListOf()
