@@ -9,7 +9,7 @@
     "productHave": true,
     "productBrand": "FurniCraft",
     "productImage": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc",
-    "productCategory": "Furniture",
+    "productCategory": "Sofas",
     "productNote": "Free assembly included",
     "modelURL": "https://drive.google.com/uc?export=download&id=1PDH6vKxbzGvUcpn3fT7r9YKmq3vLV5Xw"
   },
@@ -37,7 +37,7 @@
     "productHave": true,
     "productBrand": "TimberLuxe",
     "productImage": "https://teaklab.com/wp-content/uploads/2019/08/5bc190ffN152695b5.jpg",
-    "productCategory": "Furniture",
+    "productCategory": "Chairs",
     "productNote": "No assembly required",
     "modelURL": "https://drive.google.com/uc?export=download&id=1jIYP1Ky1JekIjIQD-bXdnvAlr-2yvWnQ"
   },
@@ -68,5 +68,33 @@
     "productCategory": "Household",
     "productNote": "Free app included",
     "modelURL": "https://drive.google.com/uc?export=download&id=1fEx0-Aq77NH8SW-DvHUx2256Fmx9yda6"
+  },
+  {
+    "productName": "Modern Wooden Drawer Cabinet",
+    "productId": "15",
+    "productPrice": "399",
+    "productDes": "Spacious modern wooden drawer cabinet with sleek design and smooth gliding drawers.\n\nFeatures:\n- Four large storage drawers\n- Smooth metal runners for easy opening\n- Minimalist modern design\n- Scratch-resistant surface finish\n\nMaterial & Care\nMaterial: Engineered wood with laminate finish, metal handles\nCare: Wipe clean with a damp cloth, avoid abrasive cleaners",
+    "productRating": 4.7,
+    "productDisCount": "10%",
+    "productHave": true,
+    "productBrand": "WoodenSpace",
+    "productImage": "https://cdn.decornation.in/wp-content/uploads/2020/03/5-drawer-wooden-furniture.jpg",
+    "productCategory": "Furniture",
+    "productNote": "Assembly required, instructions included",
+    "modelURL": "https://drive.google.com/uc?export=download&id=1ZwCBlP7nPJjJrzSJF7mTMCJ6c7aLKWQZ"
+  },
+  {
+    "productName": "White Round Coffee Table",
+    "productId": "16",
+    "productPrice": "259",
+    "productDes": "Elegant white round coffee table with a minimalist design and sturdy construction.\n\nFeatures:\n- Smooth round tabletop with glossy white finish\n- Sturdy wooden legs with natural wood texture\n- Lightweight yet durable\n- Perfect for modern and Scandinavian interiors\n\nMaterial & Care\nMaterial: MDF top with lacquer finish, solid wood legs\nCare: Wipe clean with a damp cloth, avoid direct heat or moisture",
+    "productRating": 4.6,
+    "productDisCount": "8%",
+    "productHave": true,
+    "productBrand": "NordicNest",
+    "productImage": "https://m.media-amazon.com/images/I/81fLGmu7yVL._AC_UF894,1000_QL80_.jpg",
+    "productCategory": "Tables",
+    "productNote": "Minimal assembly required",
+    "modelURL": "https://drive.google.com/uc?export=download&id=1VK9hyZWqq6X0w7q254Gc_A07XeJDyg0T"
   }
 ]

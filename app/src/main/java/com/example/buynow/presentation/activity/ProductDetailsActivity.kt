@@ -84,7 +84,7 @@ class ProductDetailsActivity : AppCompatActivity() {
         cardNumber = GetDefCard()
 
 
-
+       
 
 
         newProduct = arrayListOf()

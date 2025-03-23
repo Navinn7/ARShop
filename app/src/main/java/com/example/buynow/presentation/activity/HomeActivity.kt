@@ -47,12 +47,7 @@ class HomeActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
                     .commit()
                 return true
             }
-            R.id.favMenu -> {
-                val fragment = FavFragment()
-                supportFragmentManager.beginTransaction().replace(R.id.nav_fragment, fragment, fragment.javaClass.simpleName)
-                    .commit()
-                return true
-            }
+            
             R.id.profileMenu -> {
                 val fragment = ProfileFragment()
                 supportFragmentManager.beginTransaction().replace(R.id.nav_fragment, fragment, fragment.javaClass.simpleName)

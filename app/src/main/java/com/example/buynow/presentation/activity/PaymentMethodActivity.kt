@@ -2,6 +2,8 @@ package com.example.buynow.presentation.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.ImageView
@@ -88,6 +90,19 @@ class PaymentMethodActivity : AppCompatActivity(), CarDItemClickAdapter {
 
         bottomSheetDialod.setContentView(bottomSheetView)
         bottomSheetDialod.show()
+        val expiryEditText = bottomSheetView.findViewById<EditText>(R.id.exp_cardAddBottomSheet)
+
+        expiryEditText.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                if (s?.length == 2 && before == 0) {
+                    expiryEditText.append("/")
+                }
+            }
+
+            override fun afterTextChanged(s: Editable?) {}
+        })
     }
 
 
